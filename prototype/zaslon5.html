@@ -1,1 +1,205 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8">
+  <title>eRegistracija – Obravnava vloge (ministrstvo)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color:#1b1f2a;
+    }
+
+    header{
+      background:#ffffff;
+      padding:18px 36px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      box-shadow:0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    header h1{
+      margin:0;
+      font-size:20px;
+      color:#1e3c72;
+    }
+
+    .container{
+      max-width:1050px;
+      margin:40px auto;
+      padding:0 20px;
+    }
+
+    .card{
+      background:#ffffff;
+      border-radius:14px;
+      padding:28px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    h2{
+      margin-top:0;
+      color:#1e3c72;
+      font-size:28px;
+    }
+
+    .info{
+      background:#f3f6ff;
+      border-left:4px solid #1e3c72;
+      padding:12px 16px;
+      margin:12px 0 18px;
+      border-radius:8px;
+      font-size:14px;
+      line-height:1.35;
+    }
+
+    .row{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+    }
+    @media (max-width: 900px){
+      .row{ grid-template-columns: 1fr; }
+    }
+
+    .box{
+      border:1px solid #e4e7f0;
+      border-radius:12px;
+      padding:14px 14px;
+      background:#fff;
+    }
+
+    .title{
+      font-weight:800;
+      color:#24324d;
+      margin-bottom:6px;
+    }
+
+    .meta{
+      font-size:12px;
+      color:#5b6477;
+      margin:0 0 10px;
+      line-height:1.35;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin-top:8px;
+    }
+    th, td{
+      border:1px solid #e4e7f0;
+      padding:10px;
+      text-align:left;
+      font-size:14px;
+    }
+    th{ background:#f9faff; }
+
+    .actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:16px;
+    }
+    .btn{
+      padding:12px 18px;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:800;
+      border:1px solid #cfd6ea;
+      background:#ffffff;
+      color:#1e3c72;
+    }
+    .btn.approve{
+      background:#1e3c72;
+      border-color:#1e3c72;
+      color:#ffffff;
+    }
+    .btn.reject{
+      background:#fff7ed;
+      border-color:#fed7aa;
+      color:#9a3412;
+    }
+
+    .note{
+      margin-top:12px;
+      font-size:12px;
+      color:#5b6477;
+      line-height:1.35;
+    }
+
+    footer{
+      text-align:center;
+      margin-top:20px;
+      font-size:13px;
+      color:#e0e6f5;
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <h1>eRegistracija za verske skupnosti</h1>
+  <span>Zaslon 5 – Obravnava vloge (ministrstvo)</span>
+</header>
+
+<div class="container">
+  <div class="card">
+    <h2>Obravnava vloge (Ministrstvo za kulturo)</h2>
+
+    <div class="info">
+      Uradna oseba prejme vlogo iz sistema eRegistracija in izvede preverjanje pogojev.
+      Na podlagi pregleda sprejme odločitev (odobritev ali zavrnitev).
+    </div>
+
+    <div class="row">
+      <div class="box">
+        <div class="title">Prejem vloge od sistema eRegistracija</div>
+        <p class="meta">
+          Evidenčna št.: (prototip) ERVS-2026-0001<br>
+          Status: prejeto v obravnavo
+        </p>
+
+        <table>
+          <tr><th>Sklep</th><th>Status</th></tr>
+          <tr><td>Podatki vlagatelja</td><td>priloženo</td></tr>
+          <tr><td>Podatki o skupnosti</td><td>priloženo</td></tr>
+          <tr><td>Dokazila</td><td>priloženo</td></tr>
+        </table>
+      </div>
+
+      <div class="box">
+        <div class="title">Preverjanje pogojev (uradna oseba)</div>
+        <p class="meta">
+          Pregled vloge in dokazil v skladu s postopkom registracije.
+        </p>
+
+        <table>
+          <tr><th>Pogoj</th><th>Ugotovitev</th></tr>
+          <tr><td>Vloga popolna</td><td>DA</td></tr>
+          <tr><td>Dokazila priložena</td><td>DA</td></tr>
+          <tr><td>Upravna taksa</td><td>poravnana</td></tr>
+        </table>
+
+        <div class="actions">
+          <a class="btn reject" href="#">Zavrni vlogo</a>
+          <a class="btn approve" href="#">Odobri vlogo</a>
+        </div>
+
+        <div class="note">
+          (Prototip) Po odločitvi sistem pripravi obvestilo vlagatelju.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>© Ministrstvo za kulturo – prototip idejne zasnove</footer>
+</div>
+
+</body>
+</html>
 
