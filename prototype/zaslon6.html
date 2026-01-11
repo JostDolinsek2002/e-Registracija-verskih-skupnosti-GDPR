@@ -1,1 +1,186 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8">
+  <title>eRegistracija – Obvestilo vlagatelju</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color:#1b1f2a;
+    }
+
+    header{
+      background:#ffffff;
+      padding:18px 36px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      box-shadow:0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    header h1{
+      margin:0;
+      font-size:20px;
+      color:#1e3c72;
+    }
+
+    .container{
+      max-width:980px;
+      margin:40px auto;
+      padding:0 20px;
+    }
+
+    .card{
+      background:#ffffff;
+      border-radius:14px;
+      padding:28px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    h2{
+      margin-top:0;
+      color:#1e3c72;
+      font-size:28px;
+    }
+
+    .switch{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin:10px 0 18px;
+    }
+
+    .btn{
+      padding:10px 14px;
+      border-radius:10px;
+      border:1px solid #cfd6ea;
+      background:#ffffff;
+      font-weight:800;
+      color:#1e3c72;
+      cursor:pointer;
+    }
+    .btn.primary{
+      background:#1e3c72;
+      color:#fff;
+      border-color:#1e3c72;
+    }
+
+    .notice{
+      padding:14px 16px;
+      border-radius:12px;
+      border:1px solid #e4e7f0;
+      margin-top:8px;
+      line-height:1.35;
+      font-size:15px;
+    }
+    .ok{
+      background:#eefaf1;
+      border-left:5px solid #0a6b2b;
+    }
+    .bad{
+      background:#fff7ed;
+      border-left:5px solid #9a3412;
+    }
+
+    .meta{
+      margin-top:12px;
+      font-size:13px;
+      color:#5b6477;
+      line-height:1.35;
+    }
+
+    .actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:16px;
+    }
+
+    a.linkbtn{
+      display:inline-block;
+      padding:11px 16px;
+      border-radius:10px;
+      border:1px solid #cfd6ea;
+      text-decoration:none;
+      font-weight:800;
+      color:#1e3c72;
+      background:#ffffff;
+    }
+
+    footer{
+      text-align:center;
+      margin-top:20px;
+      font-size:13px;
+      color:#e0e6f5;
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <h1>eRegistracija za verske skupnosti</h1>
+  <span>Zaslon 6 – Obvestilo vlagatelju</span>
+</header>
+
+<div class="container">
+  <div class="card">
+    <h2>Obvestilo o odločitvi</h2>
+
+    <!-- Preklop samo za prototip: omogoči screenshot obeh stanj -->
+    <div class="switch">
+      <button class="btn primary" id="showOk" type="button">Prikaži: ODOBRENO</button>
+      <button class="btn" id="showBad" type="button">Prikaži: ZAVRNJENO</button>
+    </div>
+
+    <div id="stateOk" class="notice ok">
+      <strong>Vloga je odobrena.</strong><br>
+      Vaša verska skupnost je uspešno registrirana. Odločba je pripravljena v elektronski obliki.
+    </div>
+
+    <div id="stateBad" class="notice bad" style="display:none;">
+      <strong>Vloga je zavrnjena.</strong><br>
+      Vloga ne izpolnjuje vseh pogojev. Razlog zavrnitve je naveden v elektronskem obvestilu/odločbi.
+    </div>
+
+    <div class="meta">
+      Evidenčna številka: (prototip) ERVS-2026-0001<br>
+      Status postopka: zaključen
+    </div>
+
+    <div class="actions">
+      <a class="linkbtn" href="#">Prenesi odločbo (prototip)</a>
+      <a class="linkbtn" href="#">Nazaj na začetek</a>
+    </div>
+  </div>
+
+  <footer>© Ministrstvo za kulturo – prototip idejne zasnove</footer>
+</div>
+
+<script>
+  const okBtn = document.getElementById('showOk');
+  const badBtn = document.getElementById('showBad');
+  const okBox = document.getElementById('stateOk');
+  const badBox = document.getElementById('stateBad');
+
+  okBtn.addEventListener('click', () => {
+    okBox.style.display = 'block';
+    badBox.style.display = 'none';
+    okBtn.classList.add('primary');
+    badBtn.classList.remove('primary');
+  });
+
+  badBtn.addEventListener('click', () => {
+    okBox.style.display = 'none';
+    badBox.style.display = 'block';
+    badBtn.classList.add('primary');
+    okBtn.classList.remove('primary');
+  });
+</script>
+
+</body>
+</html>
 
