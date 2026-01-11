@@ -1,1 +1,224 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>eRegistracija – Izpolnitev elektronske vloge</title>
 
+  <style>
+    :root{
+      --bg1:#1e3c72; --bg2:#2a5298;
+      --card:#ffffff; --line:#e7eaf3;
+      --text:#1b1f2a; --muted:#5b6477;
+      --accent:#1e3c72; --soft:#f3f6ff;
+    }
+    body{
+      margin:0; font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg,var(--bg1),var(--bg2));
+      color:var(--text);
+    }
+    header{
+      background:#fff;
+      padding:18px 36px;
+      display:flex; justify-content:space-between; align-items:center;
+      box-shadow:0 2px 6px rgba(0,0,0,.10);
+    }
+    header .brand{
+      font-weight:800; color:var(--accent); font-size:20px;
+    }
+    header .crumb{
+      color:var(--muted); font-weight:700; font-size:14px;
+    }
+    .wrap{ max-width:980px; margin:28px auto 44px; padding:0 18px; }
+    .card{
+      background:var(--card);
+      border-radius:14px;
+      box-shadow:0 10px 30px rgba(0,0,0,.18);
+      padding:26px 28px;
+    }
+    h1{ margin:0 0 6px; color:var(--accent); font-size:28px; }
+    .sub{ margin:0 0 18px; color:var(--muted); }
+    .notice{
+      background:var(--soft);
+      border:1px solid #cfe0ff;
+      border-left:4px solid var(--accent);
+      padding:12px 14px;
+      border-radius:10px;
+      margin:14px 0 18px;
+      color:#223;
+      font-size:14px;
+      line-height:1.35;
+    }
+    .section{
+      margin-top:18px;
+      padding-top:14px;
+      border-top:1px solid var(--line);
+    }
+    .section h2{
+      margin:0 0 10px;
+      font-size:18px;
+      color:#24324d;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+    }
+    @media (max-width: 820px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+    .field{
+      display:flex; flex-direction:column;
+      gap:6px;
+      padding:10px 10px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:#fff;
+    }
+    label{ font-weight:800; font-size:14px; }
+    input, textarea{
+      padding:10px 11px;
+      border:1px solid #d6dbea;
+      border-radius:10px;
+      font-size:14px;
+    }
+    textarea{ min-height:88px; resize:vertical; }
+    .tag{
+      display:inline-block;
+      font-size:12px;
+      color:#234;
+      background:#eef5ff;
+      border:1px solid #cfe2ff;
+      padding:4px 8px;
+      border-radius:999px;
+      width: fit-content;
+    }
+    .muted{ color:var(--muted); font-size:12px; line-height:1.35; }
+    .actions{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin-top:18px;
+    }
+    .btn{
+      display:inline-block;
+      padding:11px 14px;
+      border-radius:12px;
+      border:1px solid #d6dbea;
+      text-decoration:none;
+      font-weight:800;
+      color:#123;
+      background:#fff;
+    }
+    .btn.primary{
+      background:var(--accent);
+      border-color:var(--accent);
+      color:#fff;
+    }
+    footer{
+      text-align:center;
+      margin-top:14px;
+      color:#e8ecf7;
+      font-size:13px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="brand">eRegistracija za verske skupnosti</div>
+    <div class="crumb">Zaslon 2 / Izpolnitev elektronske vloge</div>
+  </header>
+
+  <div class="wrap">
+    <div class="card">
+      <h1>Izpolnitev elektronske vloge</h1>
+      <p class="sub">Uporabnik izpolni vlogo in priloži zahtevana dokazila.</p>
+
+      <div class="notice">
+        <strong>Obvestilo o obdelavi osebnih podatkov:</strong>
+        Podatki na tej vlogi se obdelujejo izključno za namen izvedbe postopka registracije verske skupnosti.
+      </div>
+
+      <div class="section">
+        <h2>Podatki o vlagatelju (zastopnik)</h2>
+        <div class="grid">
+          <div class="field">
+            <label>Ime in priimek</label>
+            <input type="text" placeholder="npr. Ana Novak" />
+            <span class="tag">Vir: vnese uporabnik</span>
+          </div>
+
+          <div class="field">
+            <label>E-naslov</label>
+            <input type="email" placeholder="npr. ana.novak@email.si" />
+            <span class="tag">Vir: vnese uporabnik</span>
+          </div>
+
+          <div class="field">
+            <label>EMŠO</label>
+            <input type="text" value="(pridobljeno po prijavi)" disabled />
+            <span class="tag">Vir: pridobi sistem (evidence)</span>
+          </div>
+
+          <div class="field">
+            <label>Stalno prebivališče</label>
+            <input type="text" value="(pridobljeno po prijavi)" disabled />
+            <span class="tag">Vir: pridobi sistem (evidence)</span>
+          </div>
+        </div>
+
+        <p class="muted">
+          Opomba: če je vloga nepopolna, uporabnik v tem koraku vnese manjkajoče podatke (popravki/dopolnitve).
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Podatki o verski skupnosti</h2>
+        <div class="grid">
+          <div class="field">
+            <label>Naziv verske skupnosti</label>
+            <input type="text" placeholder="npr. Verska skupnost X" />
+            <span class="tag">Vir: vnese uporabnik</span>
+          </div>
+
+          <div class="field">
+            <label>Sedež (naslov)</label>
+            <input type="text" placeholder="npr. Ulica 1, 1000 Ljubljana" />
+            <span class="tag">Vir: vnese uporabnik</span>
+          </div>
+
+          <div class="field" style="grid-column: 1 / -1;">
+            <label>Kratek opis delovanja</label>
+            <textarea placeholder="Kratek opis..."></textarea>
+            <span class="tag">Vir: vnese uporabnik</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Priloge (dokazila)</h2>
+        <div class="grid">
+          <div class="field">
+            <label>Dokazila o najmanj 10 polnoletnih članih</label>
+            <input type="file" />
+            <span class="tag">Vir: uporabnik priloži</span>
+          </div>
+
+          <div class="field">
+            <label>Potrdilo o plačilu upravne takse</label>
+            <input type="file" />
+            <span class="tag">Vir: uporabnik priloži</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <a class="btn" href="#">Nazaj</a>
+        <a class="btn primary" href="#">Naprej</a>
+      </div>
+    </div>
+
+    <footer>© Ministrstvo za kulturo – prototip idejne zasnove</footer>
+  </div>
+</body>
+</html>
+S
